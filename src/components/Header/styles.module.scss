@@ -1,3 +1,4 @@
+@import "src/components/App.scss";
 
 .wrapper {
     overflow: hidden;
@@ -22,6 +23,7 @@
     font-size: 1.3rem;
     color: rgb(80, 60, 0);
     font-family: "SourceCode";
+    font-weight: bold;
 }
 .navigate p:not(:last-child) {
     margin-right: 1.5rem;
@@ -47,4 +49,94 @@
 .text {
     font-size: 1.9rem;
     margin-right: 2rem;
+}
+
+@include breakpoint(lg) {
+    .navigate {
+        margin: 16px;
+        font-size: 1.1rem;
+    }
+    .navigate p:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .container_text {
+        margin-top: 8rem;
+        line-height: 2.8rem;
+    }
+    .title {
+        font-size: 2.6rem;
+        margin-right: 1.5rem;
+    }
+    .text {
+        font-size: 1.3rem;
+        margin-right: 1.5rem;
+    }
+}
+@include breakpoint(n) {
+    .navigate {
+        font-size: 1rem;
+    }
+    .navigate p:not(:last-child) {
+        margin-right: 0.6rem;
+    }
+    .container_text {
+        margin-top: 5.5rem;
+        line-height: 2.2rem;
+    }
+    .title {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    .text {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+}
+@include breakpoint(sm) {
+    .navigate {
+        margin: 10px;
+        font-size: 0.7rem;
+    }
+    .navigate p:not(:last-child) {
+        margin-right: 0.5rem;
+    }
+    .container_text {
+        margin-top: 4rem;
+        line-height: 1.8em;
+    }
+    .title {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    .text {
+        font-size: 0.8rem;
+        margin-right: 10px;
+    }
+}
+@include breakpoint(xs) {
+    .navigate {
+        margin: 10px;
+        font-size: 0.5rem;
+    }
+    .navigate p:not(:last-child) {
+        margin-right: 0.3rem;
+    }
+    .container_text {
+        position: absolute;
+        top: 1.8rem;
+        right: 0;
+        margin-top: 2rem;
+        line-height: 1.2rem;
+        width: 40%;
+        text-align: center;
+    }
+    .title {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+    .text {
+        font-size: 0.5rem;
+        margin-right: 10px;
+        line-height: 0.8rem;
+    }
 }
