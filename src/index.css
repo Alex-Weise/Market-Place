@@ -1,3 +1,27 @@
+@font-face {
+	font-family: "MarckScript";
+	src: local("MarckScript"),
+	 url("./fonts/MarckScript/MarckScript-Regular.ttf") format("truetype");
+	/* font-weight: bold; */
+}
+@font-face {
+	font-family: "Comfortaa";
+	src: local("Comfortaa"),
+	 url("./fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf") format("truetype");
+	/* font-weight: bold; */
+}
+@font-face {
+	font-family: "Cormorant";
+	src: local("Cormorant"),
+	 url("./fonts/Cormorant/CormorantGaramond-Regular.ttf") format("truetype");
+	/* font-weight: bold; */
+}
+@font-face {
+	font-family: "SourceCode";
+	src: local("SourceCode"),
+	 url("./fonts/SourceCode/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+	/* font-weight: bold; */
+}
 /*Обнуление*/
 *{
 	padding: 0;
