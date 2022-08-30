@@ -6,6 +6,7 @@ $breakpoints: (
   n: 1023.98px,
   lg: 1439.98px,
 );
+$font-color-brown: rgb(80, 60, 0);
 
 @mixin breakpoint($breakpoint) {
 
