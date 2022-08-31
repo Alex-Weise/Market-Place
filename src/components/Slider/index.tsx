@@ -11,9 +11,8 @@ const Slider = () => {
         <section className={styles.wrapper}>
             <div className={styles.nav}>
                 <div className={styles.category}>
-                    <button type="button" className={styles.button}>стикеры</button>
-                    <button type="button" className={styles.button}>открытки</button>
-                    <button type="button" className={styles.button}>брелки</button>
+                    <button type="button" className={styles.button}>популярное</button>
+                    <button type="button" className={styles.button}>новинки</button>
                 </div>
                 <div className={styles.move}>
                     <button type="button" className={styles.back}><img src={left} alt="Back"/></button>
@@ -22,14 +21,74 @@ const Slider = () => {
             </div>
             <div className={styles.cards}>
                 <div className={styles.card}>
+                    <p className={styles.hot}>популярный</p>
+                    <p className={styles.new}>новинка</p>
                     <img src={post1} alt="Открытка мини" />
                     <p className={styles.text}>открытка мини</p>
                     <p className={styles.price}>80</p>
+                    <div className={styles.add}>
+                        <button type="button" className={styles.shop}>добавить в</button>
+                    </div>
                 </div>
                 <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
                     <img src={stick} alt="Стикеры" />
                     <p className={styles.text}>стикеры</p>
                     <p className={styles.price}>300</p>
+                    <button type="button" className={styles.shop}>добавить в</button>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={post1} alt="Открытка мини" />
+                    <p className={styles.text}>открытка мини</p>
+                    <p className={styles.price}>80</p>
+                    <div className={styles.add}>
+                        <button type="button" className={styles.shop}>добавить в</button>
+                    </div>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={stick} alt="Стикеры" />
+                    <p className={styles.text}>стикеры</p>
+                    <p className={styles.price}>300</p>
+                    <button type="button" className={styles.shop}>добавить в</button>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={post1} alt="Открытка мини" />
+                    <p className={styles.text}>открытка мини</p>
+                    <p className={styles.price}>80</p>
+                    <div className={styles.add}>
+                        <button type="button" className={styles.shop}>добавить в</button>
+                    </div>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={stick} alt="Стикеры" />
+                    <p className={styles.text}>стикеры</p>
+                    <p className={styles.price}>300</p>
+                    <button type="button" className={styles.shop}>добавить в</button>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={stick} alt="Стикеры" />
+                    <p className={styles.text}>стикеры</p>
+                    <p className={styles.price}>300</p>
+                    <button type="button" className={styles.shop}>добавить в</button>
+                </div>
+                <div className={styles.card}>
+                    <p className={styles.hot}>популярное</p>
+                    <p className={styles.new}>новинка</p>
+                    <img src={stick} alt="Стикеры" />
+                    <p className={styles.text}>стикеры</p>
+                    <p className={styles.price}>300</p>
+                    <button type="button" className={styles.shop}>добавить в</button>
                 </div>
             </div>
         </section>
