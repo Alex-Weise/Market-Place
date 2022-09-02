@@ -1,9 +1,25 @@
 import styles from "./styles.module.scss";
 import shop from "../../assets/link/shop.svg";
+// import { useEffect } from "react";
 
 const Header = () => {
+
+    // useEffect( () => {
+    //     const handleScroll = () => {
+    //         const scrolled = Math.round(window.scrollY);
+    //         console.log(scrolled);
+    //         const screen = document.getElementById("Screen");
+    //         if (screen) screen.style.height = `calc(100vh - ${scrolled}px)`;
+    //     };
+    //     window.addEventListener("scroll", handleScroll);
+
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     }
+    // }, [])
+    
     return (
-        <section className={styles.wrapper}>
+        <section className={styles.wrapper} id="Screen">
             <button type="button" className={styles.shop}><img src={shop} alt="Корзина" /></button>
             <input type="checkbox" id="check"/> 
             <label htmlFor="check" className={styles.burger}>
