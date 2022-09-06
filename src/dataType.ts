@@ -9,5 +9,6 @@ export type OneProduct = {
     discount: number | boolean,
     ishot: boolean,
     isnew: boolean,
-    images: string[],
+    ishave: boolean,
+    images: string | string [],
 }

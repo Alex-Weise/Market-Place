@@ -1,30 +1,26 @@
 import { OneProduct } from "../dataType";
+import * as image from "../assets/data";
 
-const addNEW = (arr: OneProduct[], data: string, type: string, offtype:string, category:string, title:string, text:string, price:number, discount:boolean | number, ishot:boolean, isnew: boolean, images:number ) => {
-    let imageArr = [];
-    for (let i = 1; i <= images; i++) {
-        if (offtype) {
-           imageArr.push(`../../assets/data/${data}/${type}/${offtype}/${i}.jpg`);
-        } else {imageArr.push(`../../assets/data/${data}/${type}/${i}.jpg`)}
-    };
-    let obj = { // это единица продукта
-        //ниже указываем папки к картинкам после assets/data/
-        data: data, // указываем папку (категории на англ)
-        type: type, // указываем внутреннюю папку (подкатегории или же сама папка товара)
-        offtype: offtype, // пустая строка, или же папка товара
-        //ниже уже о товаре
-        category: category, // категории товаров "Открытка", "Брелок" и тд
-        title: title, // название товара
-        text: text, // все описание товара (разделять точкой (.))
-        price: price, // цена, без Р
-        discount: discount, // цена по скидке, на будущее если нужно =)
-        ishot: ishot, // популярный товар, да или нет
-        isnew: isnew, // новинка, да или нет
-        images: imageArr, // тут уже картинки, пусть будет 1 -ая картинка основная, а остальные листать можно
-        // в функции по созданию нужно указать количество картинок в папке
-    };
-    arr.push(obj);
-};
+// const addNEW = (arr: OneProduct[], data: string, type: string, offtype:string, category:string, title:string, text:string, price:number, discount:boolean | number, ishot:boolean, isnew: boolean, ishave:boolean, images:number ) => {
+//     let obj = { // это единица продукта
+//         //ниже указываем папки к картинкам после assets/data/
+//         data: data, // указываем папку (категории на англ)
+//         type: type, // указываем внутреннюю папку (подкатегории или же сама папка товара)
+//         offtype: offtype, // пустая строка, или же папка товара
+//         //ниже уже о товаре
+//         category: category, // категории товаров "Открытка", "Брелок" и тд
+//         title: title, // название товара
+//         text: text, // все описание товара (разделять точкой (.))
+//         price: price, // цена, без Р
+//         discount: discount, // цена по скидке, на будущее если нужно =)
+//         ishot: ishot, // популярный товар, да или нет
+//         isnew: isnew, // новинка, да или нет
+//         ishave: ishave, // в наличии ли товар
+//         images: images, // тут уже картинки, пусть будет 1 -ая картинка основная, а остальные листать можно
+//         // в функции по созданию нужно указать количество картинок в папке
+//     };
+//     arr.push(obj);
+// };
 
 export const bookmark:OneProduct[] = [
     {
@@ -38,7 +34,9 @@ export const bookmark:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/bookmark/black/1.jpg"],
+        ishave: true,
+        images: image.black,
+        // images: ["../../assets/data/bookmark/black/1.jpg"],
     },
     {
         data: "bookmark",
@@ -51,7 +49,9 @@ export const bookmark:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/bookmark/blue/1.jpg"],
+        ishave: true,
+        images: image.blue,
+        // images: ["../../assets/data/bookmark/blue/1.jpg"],
     },
 ];
 export const pin:OneProduct[] = [
@@ -66,7 +66,9 @@ export const pin:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/pin/pin1/1.jpg","../../assets/data/pin/pin1/2.jpg"],
+        ishave: true,
+        images: image.pin,
+        // images: ["../../assets/data/pin/pin1/1.jpg","../../assets/data/pin/pin1/2.jpg"],
     },
 ];
 export const postcard:OneProduct[] = [
@@ -81,7 +83,9 @@ export const postcard:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/postcard/date/1.jpg"],
+        ishave: true,
+        images: image.date,
+        // images: ["../../assets/data/postcard/date/1.jpg"],
     },
     {
         data: "postcard",
@@ -92,9 +96,11 @@ export const postcard:OneProduct[] = [
         text: "односторонняя печать. текстурная бумага плотностю 250 гр. формат А6",
         price: 100,
         discount: false,
-        ishot: false,
+        ishot: true,
         isnew: false,
-        images: ["../../assets/data/postcard/dont/1.jpg"],
+        ishave: true,
+        images: image.dont,
+        // images: ["../../assets/data/postcard/dont/1.jpg"],
     },
     {
         data: "postcard",
@@ -107,7 +113,9 @@ export const postcard:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/postcard/flowers/1.jpg"],
+        ishave: true,
+        images: image.flowers,
+        // images: ["../../assets/data/postcard/flowers/1.jpg"],
     },
     {
         data: "postcard",
@@ -120,7 +128,9 @@ export const postcard:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/postcard/june/1.jpg"],
+        ishave: true,
+        images: image.june,
+        // images: ["../../assets/data/postcard/june/1.jpg"],
     },
     {
         data: "postcard",
@@ -133,7 +143,9 @@ export const postcard:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/postcard/mind/1.jpg"],
+        ishave: true,
+        images: image.mind,
+        // images: ["../../assets/data/postcard/mind/1.jpg"],
     },
     {
         data: "postcard",
@@ -146,14 +158,16 @@ export const postcard:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/postcard/ticket/1.jpg"],
+        ishave: true,
+        images: image.ticket,
+        // images: ["../../assets/data/postcard/ticket/1.jpg"],
     },
 ];
 export const stickers:OneProduct[] = [
     {
         data: "stickers",
         type: "a6",
-        offtype: "flowers",
+        offtype: "flowersStick",
         category: "стикеры А6",
         title: "цветы",
         text: "материал: виниловая плёнка с матовой ламинацией. вырубка по форме каждого стикера. формат А6",
@@ -161,12 +175,14 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/a6/flowers/1.jpg"],
+        ishave: true,
+        images: image.flowersStick,
+        // images: ["../../assets/data/stickers/a6/flowers/1.jpg"],
     },
     {
         data: "stickers",
         type: "a6",
-        offtype: "neer",
+        offtype: "near",
         category: "стикеры А6",
         title: "я всегда буду рядом",
         text: "материал: виниловая плёнка с матовой ламинацией. вырубка по форме каждого стикера. формат А6",
@@ -174,7 +190,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/a6/neer/1.jpg"],
+        ishave: true,
+        images: image.near,
+        // images: ["../../assets/data/stickers/a6/neer/1.jpg"],
     },
     {
         data: "stickers",
@@ -187,7 +205,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/a6/ocean/1.jpg"],
+        ishave: true,
+        images: image.ocean,
+        // images: ["../../assets/data/stickers/a6/ocean/1.jpg"],
     },
     {
         data: "stickers",
@@ -198,9 +218,11 @@ export const stickers:OneProduct[] = [
         text: "материал: виниловая плёнка с матовой ламинацией. вырубка по форме каждого стикера. формат А6",
         price: 130,
         discount: false,
-        ishot: false,
+        ishot: true,
         isnew: false,
-        images: ["../../assets/data/stickers/a6/sleep/1.jpg", "../../assets/data/stickers/a6/sleep/2.jpg"],
+        ishave: true,
+        images: image.sleep,
+        // images: ["../../assets/data/stickers/a6/sleep/1.jpg", "../../assets/data/stickers/a6/sleep/2.jpg"],
     },
     {
         data: "stickers",
@@ -211,9 +233,11 @@ export const stickers:OneProduct[] = [
         text: "материал: виниловая плёнка с матовой ламинацией. вырубка по форме каждого стикера. формат А6",
         price: 130,
         discount: false,
-        ishot: false,
+        ishot: true,
         isnew: false,
-        images: ["../../assets/data/stickers/a6/summer/1.jpg", "../../assets/data/stickers/a6/summer/2.jpg", "../../assets/data/stickers/a6/summer/3.jpg"],
+        ishave: true,
+        images: image.summer,
+        // images: ["../../assets/data/stickers/a6/summer/1.jpg", "../../assets/data/stickers/a6/summer/2.jpg", "../../assets/data/stickers/a6/summer/3.jpg"],
     },
     {
         data: "stickers",
@@ -226,7 +250,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/little/copybook/1.jpg"],
+        ishave: true,
+        images: image.copybook,
+        // images: ["../../assets/data/stickers/little/copybook/1.jpg"],
     },
     {
         data: "stickers",
@@ -239,7 +265,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/little/life/1.jpg"],
+        ishave: true,
+        images: image.life,
+        // images: ["../../assets/data/stickers/little/life/1.jpg"],
     },
     {
         data: "stickers",
@@ -252,7 +280,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/little/mini/1.jpg"],
+        ishave: true,
+        images: image.mini,
+        // images: ["../../assets/data/stickers/little/mini/1.jpg"],
     },
     {
         data: "stickers",
@@ -265,7 +295,9 @@ export const stickers:OneProduct[] = [
         discount: false,
         ishot: false,
         isnew: false,
-        images: ["../../assets/data/stickers/little/soul/1.jpg"],
+        ishave: true,
+        images: image.soul,
+        // images: ["../../assets/data/stickers/little/soul/1.jpg"],
     },
 ];
 export const trinket:OneProduct[] = [
@@ -278,9 +310,11 @@ export const trinket:OneProduct[] = [
         text: "акриловый брелок с карабином-звёздочкой",
         price: 350,
         discount: false,
-        ishot: false,
+        ishot: true,
         isnew: false,
-        images: ["../../assets/data/trinket/trinket1/1.jpg"],
+        ishave: true,
+        images: image.trinket1,
+        // images: ["../../assets/data/trinket/trinket1/1.jpg"],
     },
 ];
 

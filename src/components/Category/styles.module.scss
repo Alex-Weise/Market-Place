@@ -1,0 +1,176 @@
+@import "src/components/App.scss";
+
+.wrapper {
+    width: 100%;
+    // height: 6rem;
+}
+.category {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    overflow: hidden;
+    width: 100%;
+}
+.all {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+}
+.bookmark {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/bookmark.svg") 0 0 / 100% no-repeat;
+        width: 45px;
+        height: 45px;
+        top: 0;
+        left: -2.2rem;
+    }
+}
+.pin {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/pin.svg") 0 0 / 100% no-repeat;
+        width: 45px;
+        height: 45px;
+        top: 0;
+        left: -2.5rem;
+    }
+}
+.postcard {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/postcard.svg") 0 0 / 100% no-repeat;
+        width: 40px;
+        height: 40px;
+        top: 0.2rem;
+        left: -2.3rem;
+    }
+}
+.stickers {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/stickers.svg") 0 0 / 100% no-repeat;
+        width: 40px;
+        height: 40px;
+        top: 0.2rem;
+        left: -2.3rem;
+    }
+}
+.trinket {
+    margin-right: 1rem;
+    background: none;
+    font-size: 1.7rem;
+    color: $font-color-brown;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/trinket.svg") 0 0 / 100% no-repeat;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        left: -2.5rem;
+    }
+}
+.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+.product {
+    padding: 0.8rem;
+    line-height: 35px;
+    position: relative;
+    img {
+        width: 200px;
+        height: 270px;
+        border-radius: 5%;
+        object-fit: cover;
+    };
+}
+.ishot {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/hot.svg") center / cover no-repeat;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        right: 0;
+    }
+}
+.isnew {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/new.svg") center / cover no-repeat;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+    }
+}
+.text {
+    font-size: 1.3rem;
+}
+.price {
+    font-size: 1.4rem;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/link/ruble.svg") 0 0 / 100% no-repeat;
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 20%;
+    }
+}
+.shop {
+    background: none;
+    width: 2.8rem;
+    height: 2.8rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}

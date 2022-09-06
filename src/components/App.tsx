@@ -1,6 +1,7 @@
 import './App.scss';
 import { Header } from "../components/Header";
 import { Slider } from './Slider';
+import { Category } from './Category';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       </header>
       <main>
         <Slider />
+        <Category />
       </main>
     </>
   );
