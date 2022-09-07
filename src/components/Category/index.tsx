@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import shop from "../../assets/link/shop.svg";
-import {motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import {motion, AnimatePresence } from "framer-motion";
 import { Product } from "../../store/globalStore";
 import { observer } from "mobx-react-lite";
 
@@ -9,7 +9,6 @@ const Category = observer(() => {
 
     return (
         <section className={styles.wrapper}>
-            <LayoutGroup>
                 <motion.div className={styles.category} layout>
                     <button type="button" className={styles.all} onClick={() => setCategory('')}>все товары</button> 
                     <button type="button" className={styles.bookmark} onClick={() => setCategory('bookmark')}>закладки</button>
@@ -19,15 +18,15 @@ const Category = observer(() => {
                     <button type="button" className={styles.trinket} onClick={() => setCategory('trinket')}>брелки</button>
                 </motion.div>
                 <motion.div className={styles.products} layout>
-                    <AnimatePresence initial={false} mode='wait'>
-                        {Category && Category.map( (item, index) => {
+                    <AnimatePresence initial={false} mode="wait">
+                        {Category && Category.map( (item) => {
                         return (
-                            <motion.div className={styles.product} key={index}
+                            <motion.div className={styles.product} key={item.id}
                                 layout
-                                initial={{opacity: 0}}
-                                animate={{opacity: 1}}
-                                exit={{opacity: 0}}
-                                transition={{duration: 0.5}}
+                                initial={{scale: 0.8 ,opacity: 0}}
+                                animate={{scale: 1, opacity: 1}}
+                                exit={{scale: 1.2, opacity: 0}}
+                                transition={{ duration: 0.5, type: 'spring' }}
                             >
                                 <p className={item.ishot ? styles.ishot : "display: none"}></p>
                                 <p className={item.isnew ? styles.isnew : "display: none"}></p>
@@ -35,12 +34,10 @@ const Category = observer(() => {
                                 <p className={styles.text}>{item.title}</p>
                                 <p className={styles.price}>{item.price}</p>
                                 <button type="button" className={styles.shop}><img src={shop} alt="shop"/></button>
-
                             </motion.div>
                         )})}
                     </AnimatePresence>
                 </motion.div>
-            </LayoutGroup>
         </section>
     )
 });

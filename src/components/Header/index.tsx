@@ -1,31 +1,19 @@
 import styles from "./styles.module.scss";
 import shop from "../../assets/link/shop.svg";
 import { FC } from "react";
-import { MotionValue, motion, useTransform } from "framer-motion";
-// import { useEffect } from "react";
+import { motion, MotionValue, useTransform, } from "framer-motion";
+
 type THeader = {
-    offset: number[],
     scrollY: MotionValue<number>,
+    offset: number[],
 }
 
-const Header:FC<THeader> = ({offset, scrollY}) => {
+const Header:FC<THeader> = ({scrollY, offset}) => {
     const heightSizes = ["100vh", "10vh"];
     const height = useTransform(scrollY, offset, heightSizes);
-    // useEffect( () => {
-    //     const handleScroll = () => {
-    //         const scrolled = Math.round(window.scrollY);
-    //         console.log(scrolled);
-    //         const screen = document.getElementById("Screen");
-    //         if (screen) screen.style.height = `calc(100vh - ${scrolled}px)`;
-    //     };
-    //     window.addEventListener("scroll", handleScroll);
 
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     }
-    // }, [])
     return (
-        <motion.section className={styles.wrapper} id="Screen" style={{height}}>
+        <motion.section className={styles.wrapper} id="Screen" style={{height}} layout>
             <button type="button" className={styles.shop}><img src={shop} alt="Корзина" /></button>
             <input type="checkbox" id="check"/> 
             <label htmlFor="check" className={styles.burger}>
