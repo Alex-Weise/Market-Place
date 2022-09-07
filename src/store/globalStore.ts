@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { makeObservable, action, observable, computed } from "mobx";
 import { OneProduct } from "../dataType";
-import { allProd } from "./products";
+import { dataProducts } from "./products";
 
 class SomeProducts {
 
@@ -9,19 +9,36 @@ class SomeProducts {
         makeObservable(this);
         this.getHot();
         this.getNew();
+        this.setCategory('');
     };
+    @observable private category:OneProduct[] = [];
 
     @observable public hotProduct:OneProduct[] = [];
 
     @observable public newProduct:OneProduct[] = [];
 
     @action private getHot = () => {
-        allProd.map( (item) => item.ishot === true && this.hotProduct.push(item));
+        this.hotProduct = dataProducts.reduce( (arr, item) => {
+            if (item.ishot) return [...arr, item];
+            return arr;
+        }, [] as OneProduct[])
     };
 
     @action private getNew = () => {
-        allProd.map( (item) => item.isnew === true && this.newProduct.push(item));
+        this.newProduct = dataProducts.reduce( (arr, item) => {
+            if (item.isnew) return [...arr, item];
+            return arr;
+        }, [] as OneProduct[])
+    };
+
+    @action public setCategory = (str:string) => {
+        let newArr = dataProducts.filter( (item => item.data === str));
+        newArr.length > 0 ? this.category = newArr : this.category = dataProducts;
+    }
+    
+    @computed public get Category() {
+        return this.category;
     }
 }
-const NewHotProduct = new SomeProducts();
-export { NewHotProduct };
+const Product = new SomeProducts();
+export { Product };

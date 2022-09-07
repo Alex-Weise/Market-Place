@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import { NewHotProduct } from "../../store/globalStore";
+import { Product } from "../../store/globalStore";
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 import shop from "../../assets/link/shop.svg";
@@ -23,7 +23,7 @@ import shop from "../../assets/link/shop.svg";
 
 const Slider = observer(() => {
     const [active, setActive] = useState("hot");
-    const { hotProduct, newProduct } = NewHotProduct;
+    const { hotProduct, newProduct } = Product;
     return (
         <section className={styles.wrapper} id="Slider">
             <div className={styles.nav}>

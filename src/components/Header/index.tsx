@@ -1,9 +1,16 @@
 import styles from "./styles.module.scss";
 import shop from "../../assets/link/shop.svg";
+import { FC } from "react";
+import { MotionValue, motion, useTransform } from "framer-motion";
 // import { useEffect } from "react";
+type THeader = {
+    offset: number[],
+    scrollY: MotionValue<number>,
+}
 
-const Header = () => {
-
+const Header:FC<THeader> = ({offset, scrollY}) => {
+    const heightSizes = ["100vh", "10vh"];
+    const height = useTransform(scrollY, offset, heightSizes);
     // useEffect( () => {
     //     const handleScroll = () => {
     //         const scrolled = Math.round(window.scrollY);
@@ -17,9 +24,8 @@ const Header = () => {
     //         window.removeEventListener("scroll", handleScroll);
     //     }
     // }, [])
-    
     return (
-        <section className={styles.wrapper} id="Screen">
+        <motion.section className={styles.wrapper} id="Screen" style={{height}}>
             <button type="button" className={styles.shop}><img src={shop} alt="Корзина" /></button>
             <input type="checkbox" id="check"/> 
             <label htmlFor="check" className={styles.burger}>
@@ -39,7 +45,7 @@ const Header = () => {
                 <h1 className={styles.title}>сияние звезд твоей души</h1>
                 <p className={styles.text}>авторская канцелярия с любовью для тебя</p>
             </div>
-        </section>
+        </motion.section>
     )
 }
 export { Header };

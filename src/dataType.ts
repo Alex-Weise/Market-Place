@@ -1,4 +1,5 @@
 export type OneProduct = {
+    id: number,
     data: string,
     type: string,
     offtype: string,
